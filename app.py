@@ -20,7 +20,10 @@ nltk.download('wordnet')
 
 udemy = pd.read_csv('data/udemy.csv')
 st.header('Recommendation System')
-search_string = st.text_input('Search Here', max_chars=40)
+with st.form(key='my_form', clear_on_submit=True):
+    submit_home = st.form_submit_button('Home')
+    search_string = st.text_input('Search Here', max_chars=55)
+    submit_button = st.form_submit_button('Search')
 
 def extract_best_indices(m, topk, mask=None):
     if len(m.shape) > 1:
@@ -62,6 +65,7 @@ def recommender(search_string, tfidf_mat):
 try:
     content_based = recommender(search_string, tfidf_mat)
     content = pd.DataFrame(content_based)
+    st.write('You Searched for {}'.format(search_string))
     st.subheader('Recommended Courses')
     for i in range(7):
         st.metric(label=content['Difficulty'].iloc[i], value=content['Course Name'].iloc[i], delta=content['Original rating'].iloc[i].astype(str))
