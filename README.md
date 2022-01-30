@@ -1,6 +1,6 @@
 # recommendation-system
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.sng)](https://share.streamlit.io/yashupadhyay05/recommendation-system/main/app.py)
+[![Open Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/yashupadhyay05/recommendation-system/main/app.py)
 
 ## Implementation of Course Recommendation System
 
